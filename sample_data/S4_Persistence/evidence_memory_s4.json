@@ -1,0 +1,431 @@
+[
+  {
+    "evidence_id": "RUN-0001",
+    "artifact_type": "Registry Run Key",
+    "source": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+    "timestamp": null,
+    "value": "ICA2026_ForensicTest powershell.exe -ExecutionPolicy Bypass -File \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\" HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\run_key.csv"
+  },
+  {
+    "evidence_id": "SCRIPT-0001",
+    "artifact_type": "Startup Script Metadata",
+    "source": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1",
+    "timestamp": "06-Sep-26 1:21:07 PM",
+    "value": "benign_startup.ps1 C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1 129 06-Sep-26 1:21:07 PM 06-Sep-26 1:21:07 PM",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_script_metadata.csv"
+  },
+  {
+    "evidence_id": "PS4-0003",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:45 PM",
+    "value": "CommandInvocation(Out-Default): \"Out-Default\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:25:06\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:25:11\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:26:21\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:26:40\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 221\r\n        Command Name = \r\n        Command Type = Script\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2627\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0004",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:40 PM",
+    "value": "CommandInvocation(benign_startup.ps1): \"benign_startup.ps1\"\r\nCommandInvocation(Out-Default): \"Out-Default\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = benign_startup.ps1\r\n        Command Type = ExternalScript\r\n        Script Name = \r\n        Command Path = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Sequence Number = 20\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0005",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:40 PM",
+    "value": "CommandInvocation(Add-Content): \"Add-Content\"\r\nParameterBinding(Add-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\"\r\nParameterBinding(Add-Content): name=\"Value\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:26:40\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = Add-Content\r\n        Command Type = Cmdlet\r\n        Script Name = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Command Path = \r\n        Sequence Number = 18\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0006",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:40 PM",
+    "value": "CommandInvocation(Get-Date): \"Get-Date\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = Get-Date\r\n        Command Type = Cmdlet\r\n        Script Name = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Command Path = \r\n        Sequence Number = 16\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0007",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:26:40 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\r\n\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0008",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:26:40 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\npowershell.exe -ExecutionPolicy Bypass -File \"$CaseDir\\benign_startup.ps1\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0009",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:21 PM",
+    "value": "CommandInvocation(Add-Content): \"Add-Content\"\r\nParameterBinding(Add-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\"\r\nParameterBinding(Add-Content): name=\"Value\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:26:21\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 215\r\n        Command Name = Add-Content\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2611\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0010",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:26:21 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0011",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:15 PM",
+    "value": "CommandInvocation(Out-Default): \"Out-Default\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"$timestamp = Get-Date\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"Add-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 212\r\n        Command Name = \r\n        Command Type = Script\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2603\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0012",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:15 PM",
+    "value": "CommandInvocation(Get-Content): \"Get-Content\"\r\nParameterBinding(Get-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 212\r\n        Command Name = Get-Content\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2601\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0013",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:26:15 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\nGet-Content \"$CaseDir\\benign_startup.ps1\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0014",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:26:11 PM",
+    "value": "CommandInvocation(Set-Content): \"Set-Content\"\r\nParameterBinding(Set-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\nParameterBinding(Set-Content): name=\"Encoding\"; value=\"UTF8\"\r\nParameterBinding(Set-Content): name=\"Value\"; value=\"$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 209\r\n        Command Name = Set-Content\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2593\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0015",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:26:11 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$CaseDir = \"C:\\ForensicAgent\\sample_data\\S4_Persistence\"\n\n@'\n$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\n'@ | Set-Content \"$CaseDir\\benign_startup.ps1\" -Encoding UTF8\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0018",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:19 PM",
+    "value": "CommandInvocation(Get-Command): \"Get-Command\"\r\nParameterBinding(Get-Command): name=\"ErrorAction\"; value=\"Ignore\"\r\nParameterBinding(Get-Command): name=\"Name\"; value=\".\\ICA2026_S4_STARTUP\"\r\nNonTerminatingError(Get-Command): \"The term '.\\ICA2026_S4_STARTUP' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.\"\r\nCommandInvocation(Get-Command): \"Get-Command\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = \r\n        Command Name = Get-Command\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2567\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0019",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:19 PM",
+    "value": "CommandInvocation(Out-Default): \"Out-Default\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"The term 'ICA2026_S4_STARTUP' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 196\r\n        Command Name = \r\n        Command Type = Script\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2565\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0020",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:25:19 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\nICA2026_S4_STARTUP 09/06/2026 ...\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0021",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:16 PM",
+    "value": "CommandInvocation(Out-Default): \"Out-Default\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:25:06\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:25:11\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 193\r\n        Command Name = \r\n        Command Type = Script\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2551\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0022",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:11 PM",
+    "value": "CommandInvocation(benign_startup.ps1): \"benign_startup.ps1\"\r\nCommandInvocation(Out-Default): \"Out-Default\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = benign_startup.ps1\r\n        Command Type = ExternalScript\r\n        Script Name = \r\n        Command Path = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Sequence Number = 20\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0023",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:11 PM",
+    "value": "CommandInvocation(Add-Content): \"Add-Content\"\r\nParameterBinding(Add-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\"\r\nParameterBinding(Add-Content): name=\"Value\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:25:11\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = Add-Content\r\n        Command Type = Cmdlet\r\n        Script Name = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Command Path = \r\n        Sequence Number = 18\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0024",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:11 PM",
+    "value": "CommandInvocation(Get-Date): \"Get-Date\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = Get-Date\r\n        Command Type = Cmdlet\r\n        Script Name = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Command Path = \r\n        Sequence Number = 16\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0025",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:25:11 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\r\n\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0026",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:25:10 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\npowershell.exe -ExecutionPolicy Bypass -File \"$CaseDir\\benign_startup.ps1\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0027",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:06 PM",
+    "value": "CommandInvocation(Add-Content): \"Add-Content\"\r\nParameterBinding(Add-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\"\r\nParameterBinding(Add-Content): name=\"Value\"; value=\"ICA2026_S4_STARTUP 09/06/2026 13:25:06\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 187\r\n        Command Name = Add-Content\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2535\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0028",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:25:06 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0029",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:02 PM",
+    "value": "CommandInvocation(Out-Default): \"Out-Default\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"$timestamp = Get-Date\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"Add-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 184\r\n        Command Name = \r\n        Command Type = Script\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2527\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0030",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:25:02 PM",
+    "value": "CommandInvocation(Get-Content): \"Get-Content\"\r\nParameterBinding(Get-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 184\r\n        Command Name = Get-Content\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2525\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0031",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:25:02 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\nGet-Content \"$CaseDir\\benign_startup.ps1\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0032",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:24:58 PM",
+    "value": "CommandInvocation(Set-Content): \"Set-Content\"\r\nParameterBinding(Set-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\nParameterBinding(Set-Content): name=\"Encoding\"; value=\"UTF8\"\r\nParameterBinding(Set-Content): name=\"Value\"; value=\"$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 181\r\n        Command Name = Set-Content\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2517\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0033",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:24:58 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$CaseDir = \"C:\\ForensicAgent\\sample_data\\S4_Persistence\"\n\n@'\n$timestamp = Get-Date\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" -Value \"ICA2026_S4_STARTUP $timestamp\"\n'@ | Set-Content \"$CaseDir\\benign_startup.ps1\" -Encoding UTF8\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0034",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:24:53 PM",
+    "value": "CommandInvocation(benign_startup.ps1): \"benign_startup.ps1\"\r\nCommandInvocation(Out-Default): \"Out-Default\"\r\nTerminatingError(): \"The pipeline has been stopped.\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = benign_startup.ps1\r\n        Command Type = ExternalScript\r\n        Script Name = \r\n        Command Path = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Sequence Number = 18\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0035",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:24:53 PM",
+    "value": "CommandInvocation(Add-Content): \"Add-Content\"\r\nParameterBinding(Add-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\"\r\nTerminatingError(): \"The pipeline has been stopped.\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = Add-Content\r\n        Command Type = Cmdlet\r\n        Script Name = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Command Path = \r\n        Sequence Number = 16\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0036",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:24:25 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" \n-Value \"ICA2026_S4_STARTUP 09/06/2026 13:21:07\"\r\n\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0037",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:24:25 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\npowershell.exe -ExecutionPolicy Bypass -File \"$CaseDir\\benign_startup.ps1\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0038",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:23:48 PM",
+    "value": "CommandInvocation(benign_startup.ps1): \"benign_startup.ps1\"\r\nCommandInvocation(Out-Default): \"Out-Default\"\r\nTerminatingError(): \"The pipeline has been stopped.\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = benign_startup.ps1\r\n        Command Type = ExternalScript\r\n        Script Name = \r\n        Command Path = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Sequence Number = 18\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0039",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:23:48 PM",
+    "value": "CommandInvocation(Add-Content): \"Add-Content\"\r\nParameterBinding(Add-Content): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\"\r\nTerminatingError(): \"The pipeline has been stopped.\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -File C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 1\r\n        Command Name = Add-Content\r\n        Command Type = Cmdlet\r\n        Script Name = C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\r\n        Command Path = \r\n        Sequence Number = 16\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0040",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:21:39 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" \n-Value \"ICA2026_S4_STARTUP 09/06/2026 13:21:07\"\r\n\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0041",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:21:39 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\npowershell.exe -ExecutionPolicy Bypass -File \"$CaseDir\\benign_startup.ps1\"\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0042",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:21:34 PM",
+    "value": "CommandInvocation(Get-Item): \"Get-Item\"\r\nParameterBinding(Get-Item): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\nCommandInvocation(Select-Object): \"Select-Object\"\r\nParameterBinding(Select-Object): name=\"Property\"; value=\"Name, FullName, Length, CreationTime, LastWriteTime\"\r\nCommandInvocation(Export-Csv): \"Export-Csv\"\r\nParameterBinding(Export-Csv): name=\"NoTypeInformation\"; value=\"True\"\r\nParameterBinding(Export-Csv): name=\"Encoding\"; value=\"UTF8\"\r\nParameterBinding(Export-Csv): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_script_metadata.csv\"\r\nParameterBinding(Select-Object): name=\"InputObject\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\nParameterBinding(Export-Csv): name=\"InputObject\"; value=\"@{Name=benign_startup.ps1; FullName=C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1; Length=129; CreationTime=06-Sep-26 1:21:07 PM; LastWriteTime=06-Sep-26 1:21:07 PM}\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 169\r\n        Command Name = Get-Item\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2489\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0043",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:21:34 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\nGet-Item \"$CaseDir\\benign_startup.ps1\" |\nSelect-Object Name, FullName, Length, CreationTime, LastWriteTime |\nExport-Csv `\n\"$CaseDir\\startup_script_metadata.csv\" `\n-NoTypeInformation `\n-Encoding UTF8\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0044",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:21:28 PM",
+    "value": "CommandInvocation(Get-ItemProperty): \"Get-ItemProperty\"\r\nParameterBinding(Get-ItemProperty): name=\"Path\"; value=\"HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\"\r\nCommandInvocation(Select-Object): \"Select-Object\"\r\nParameterBinding(Select-Object): name=\"Property\"; value=\"ICA2026_ForensicTest\"\r\nCommandInvocation(Export-Csv): \"Export-Csv\"\r\nParameterBinding(Export-Csv): name=\"NoTypeInformation\"; value=\"True\"\r\nParameterBinding(Export-Csv): name=\"Encoding\"; value=\"UTF8\"\r\nParameterBinding(Export-Csv): name=\"Path\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\run_key.csv\"\r\nParameterBinding(Select-Object): name=\"InputObject\"; value=\"@{OneDrive=\"C:\\Users\\analyst\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background; Teams=\"C:\\Users\\analyst\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe\" msteams:system-initiated; MicrosoftEdgeAutoLaunch_C43E0F6286A350B71A3F31AD450301E1=\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --win-session-start; GoogleChromeAutoLaunch_8C03DDCD298FDA4FE3952D12E0BD2BB6=\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --no-startup-window /prefetch:5; ICA2026_ForensicTest=powershell.exe -ExecutionPolicy Bypass -File \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"; PSPath=Microsoft.PowerShell.Core\\Registry::HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run; PSParentPath=Microsoft.PowerShell.Core\\Registry::HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion; PSChildName=Run; PSDrive=HKCU; PSProvider=Microsoft.PowerShell.Core\\Registry}\"\r\nParameterBinding(Export-Csv): name=\"InputObject\"; value=\"@{ICA2026_ForensicTest=powershell.exe -ExecutionPolicy Bypass -File \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"}\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 166\r\n        Command Name = Get-ItemProperty\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2481\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0047",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:21:15 PM",
+    "value": "CommandInvocation(Out-Default): \"Out-Default\"\r\nParameterBinding(Out-Default): name=\"InputObject\"; value=\"@{ICA2026_ForensicTest=powershell.exe -ExecutionPolicy Bypass -File \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"; PSPath=Microsoft.PowerShell.Core\\Registry::HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run; PSParentPath=Microsoft.PowerShell.Core\\Registry::HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion; PSChildName=Run; PSDrive=HKCU; PSProvider=Microsoft.PowerShell.Core\\Registry}\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 160\r\n        Command Name = \r\n        Command Type = Script\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2465\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0048",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:21:15 PM",
+    "value": "CommandInvocation(New-ItemProperty): \"New-ItemProperty\"\r\nParameterBinding(New-ItemProperty): name=\"Path\"; value=\"HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\"\r\nParameterBinding(New-ItemProperty): name=\"Name\"; value=\"ICA2026_ForensicTest\"\r\nParameterBinding(New-ItemProperty): name=\"Value\"; value=\"powershell.exe -ExecutionPolicy Bypass -File \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\"\r\nParameterBinding(New-ItemProperty): name=\"PropertyType\"; value=\"String\"\r\nParameterBinding(New-ItemProperty): name=\"Force\"; value=\"True\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 160\r\n        Command Name = New-ItemProperty\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2463\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0049",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:21:14 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$RunKey = \"HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\"\n\nNew-ItemProperty `\n  -Path $RunKey `\n  -Name \"ICA2026_ForensicTest\" `\n  -Value 'powershell.exe -ExecutionPolicy Bypass -File \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"' `\n  -PropertyType String `\n  -Force\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0050",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4103",
+    "timestamp": "06-Sep-26 1:21:07 PM",
+    "value": "CommandInvocation(Out-File): \"Out-File\"\r\nParameterBinding(Out-File): name=\"Encoding\"; value=\"UTF8\"\r\nParameterBinding(Out-File): name=\"FilePath\"; value=\"C:\\ForensicAgent\\sample_data\\S4_Persistence\\benign_startup.ps1\"\r\nParameterBinding(Out-File): name=\"InputObject\"; value=\"Add-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" \n-Value \"ICA2026_S4_STARTUP 09/06/2026 13:21:07\"\"\r\n\r\n\r\nContext:\r\n        Severity = Informational\r\n        Host Name = ConsoleHost\r\n        Host Version = 5.1.26100.9168\r\n        Host ID = SANITIZED-GUID\r\n        Host Application = C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\r\n        Engine Version = 5.1.26100.9168\r\n        Runspace ID = SANITIZED-GUID\r\n        Pipeline ID = 157\r\n        Command Name = Out-File\r\n        Command Type = Cmdlet\r\n        Script Name = \r\n        Command Path = \r\n        Sequence Number = 2455\r\n        User = FORENSIC-HOST\\analyst\r\n        Connected User = \r\n        Shell ID = Microsoft.PowerShell\r\n\r\n\r\nUser Data:\r\n\r\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "PS4-0051",
+    "artifact_type": "PowerShell Event Log",
+    "source": "Microsoft-Windows-PowerShell/Operational",
+    "event_id": "4104",
+    "timestamp": "06-Sep-26 1:21:07 PM",
+    "value": "Creating Scriptblock text (1 of 1):\r\n$CaseDir = \"C:\\ForensicAgent\\sample_data\\S4_Persistence\"\n\n@\"\nAdd-Content -Path \"C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt\" `\n-Value \"ICA2026_S4_STARTUP $(Get-Date)\"\n\"@ | Out-File \"$CaseDir\\benign_startup.ps1\" -Encoding UTF8\r\n\r\nScriptBlock ID: SANITIZED-GUID\r\nPath: ",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\powershell_s4.csv"
+  },
+  {
+    "evidence_id": "MARKER-0001",
+    "artifact_type": "Execution Marker",
+    "source": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt",
+    "timestamp": "1788681400.9724216",
+    "value": "ICA2026_S4_STARTUP 09/06/2026 13:25:06\nICA2026_S4_STARTUP 09/06/2026 13:25:11\nICA2026_S4_STARTUP 09/06/2026 13:26:21\nICA2026_S4_STARTUP 09/06/2026 13:26:40\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S4_Persistence\\startup_marker.txt"
+  }
+]

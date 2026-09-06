@@ -1,0 +1,36 @@
+{
+  "S1": {
+    "query": "Determine whether controlled PowerShell activity occurred and identify the supporting evidence.",
+    "memory": "sample_data/S1_PowerShell/evidence_memory.json",
+    "tools": [
+      "powershell_event_search"
+    ]
+  },
+  "S2": {
+    "query": "Determine whether the downloaded test file was executed and identify independent supporting artifacts.",
+    "memory": "sample_data/S2_DownloadExecution/evidence_memory_s2.json",
+    "tools": [
+      "security_event_search",
+      "prefetch_search",
+      "filesystem_search"
+    ]
+  },
+  "S3": {
+    "query": "Determine whether USB-mediated file activity occurred and reconstruct the relevant evidence.",
+    "memory": "sample_data/S3_USB/evidence_memory_s3.json",
+    "tools": [
+      "usbstor_search",
+      "mounted_device_search",
+      "filesystem_search"
+    ]
+  },
+  "S4": {
+    "query": "Determine whether startup persistence was configured and whether the referenced script executed.",
+    "memory": "sample_data/S4_Persistence/evidence_memory_s4.json",
+    "tools": [
+      "registry_search",
+      "powershell_event_search",
+      "filesystem_search"
+    ]
+  }
+}

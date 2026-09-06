@@ -1,0 +1,58 @@
+[
+  {
+    "evidence_id": "USBREG-0001",
+    "artifact_type": "USBSTOR Registry",
+    "source": "HKLM\\SYSTEM\\CurrentControlSet\\Enum\\USBSTOR",
+    "timestamp": null,
+    "value": "900086D1D6A68595&0 Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USBSTOR\\Disk&Ven_hp&Prod_v237w&Rev_PMAP\\900086D1D6A68595&0",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\usbstor_registry.csv"
+  },
+  {
+    "evidence_id": "USBREG-0002",
+    "artifact_type": "USBSTOR Registry",
+    "source": "HKLM\\SYSTEM\\CurrentControlSet\\Enum\\USBSTOR",
+    "timestamp": null,
+    "value": "E0D55EA58ABCE6C0E94A01DA&0 Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USBSTOR\\Disk&Ven_Kingston&Prod_DataTraveler_3.0&Rev_PMAP\\E0D55EA58ABCE6C0E94A01DA&0",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\usbstor_registry.csv"
+  },
+  {
+    "evidence_id": "MOUNT-0001",
+    "artifact_type": "MountedDevices Registry",
+    "source": "HKLM\\SYSTEM\\MountedDevices",
+    "timestamp": null,
+    "value": "\n\n\\??\\Volume{SANITIZED-GUID} : {95, 0, 63, 0...}\n\\??\\Volume{SANITIZED-GUID} : {95, 0, 63, 0...}\n\\DosDevices\\C:                                   : {68, 77, 73, 79...}\n\\DosDevices\\D:                                   : {68, 77, 73, 79...}\n\\DosDevices\\E:                                   : {95, 0, 63, 0...}\n\\DosDevices\\F:                                   : {68, 77, 73, 79...}\n\\??\\Volume{SANITIZED-GUID} : {95, 0, 63, 0...}\n\\??\\Volume{SANITIZED-GUID} : {95, 0, 63, 0...}\nPSPath                                           : Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\Mou\n                                                   ntedDevices\nPSParentPath                                     : Microsoft.PowerShell.Core\\Registry::HKEY_LOCAL_MACHINE\\SYSTEM\nPSChildName                                      : MountedDevices\nPSDrive                                          : HKLM\nPSProvider                                       : Microsoft.PowerShell.Core\\Registry\n\n\n\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\mounted_devices.txt"
+  },
+  {
+    "evidence_id": "USBFILE-0001",
+    "artifact_type": "USB File Metadata",
+    "source": "E:\\ICA2026_USB_TEST.txt",
+    "timestamp": "06-Sep-26 1:13:06 PM",
+    "value": "ICA2026_USB_TEST.txt E:\\ICA2026_USB_TEST.txt 38 06-Sep-26 1:13:05 PM 06-Sep-26 1:13:06 PM",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\usb_file_metadata.csv"
+  },
+  {
+    "evidence_id": "LOCALFILE-0001",
+    "artifact_type": "Local File Metadata",
+    "source": "C:\\ForensicAgent\\sample_data\\S3_USB\\usb_returned.txt",
+    "timestamp": "06-Sep-26 1:13:06 PM",
+    "value": "usb_returned.txt C:\\ForensicAgent\\sample_data\\S3_USB\\usb_returned.txt 38 06-Sep-26 1:13:07 PM 06-Sep-26 1:13:06 PM",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\local_file_metadata.csv"
+  },
+  {
+    "evidence_id": "FILE-usb_source.txt",
+    "artifact_type": "File-system artifact",
+    "source": "C:\\ForensicAgent\\sample_data\\S3_USB\\usb_source.txt",
+    "timestamp": "1788680585.7782774",
+    "value": "ICA2026_USB_TEST\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\usb_source.txt"
+  },
+  {
+    "evidence_id": "FILE-usb_returned.txt",
+    "artifact_type": "File-system artifact",
+    "source": "C:\\ForensicAgent\\sample_data\\S3_USB\\usb_returned.txt",
+    "timestamp": "1788680586.0",
+    "value": "ICA2026_USB_TEST\n",
+    "provenance": "C:\\ForensicAgent\\sample_data\\S3_USB\\usb_returned.txt"
+  }
+]
