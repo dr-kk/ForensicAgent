@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Local forensic evidence / potentially sensitive artifacts
+data/
+*.evtx
+*.pf
+*.etl
+*.dmp
+*.raw
+*.img
+*.E01
+
+# Local machine / temporary outputs
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Secrets / local configuration
+.env
+.env.*
+*.key
+*.pem
+secrets*
+credentials*
+
+# IDE
+.vscode/
+.idea/
+
+# Keep only reproducible result files intentionally added later

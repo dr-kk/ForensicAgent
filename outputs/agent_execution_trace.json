@@ -1,0 +1,183 @@
+[
+  {
+    "case_id": "S1",
+    "query": "Determine whether controlled PowerShell activity occurred and identify the supporting evidence.",
+    "plan": [
+      "powershell_event_search"
+    ],
+    "tool_calls": 1,
+    "retrieved_evidence_count": 10,
+    "latency_seconds": 3.785559,
+    "claims": [
+      {
+        "claim_id": "C1",
+        "claim": "Controlled PowerShell activity occurred.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "PS-0021",
+          "PS-0010",
+          "PS-0019"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "claim": "Get-Process was executed.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "PS-0021",
+          "PS-0017"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "claim": "The forensic marker was written to evidence.txt.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "PS-0021",
+          "PS-0019"
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "claim": "Invoke-Mimikatz was executed.",
+        "status": "UNSUPPORTED",
+        "evidence_ids": []
+      }
+    ]
+  },
+  {
+    "case_id": "S2",
+    "query": "Determine whether the downloaded test file was executed and identify independent supporting artifacts.",
+    "plan": [
+      "security_event_search",
+      "prefetch_search"
+    ],
+    "tool_calls": 2,
+    "retrieved_evidence_count": 4,
+    "latency_seconds": 3.80097,
+    "claims": [
+      {
+        "claim_id": "C1",
+        "claim": "The downloaded test BAT file existed.",
+        "status": "UNSUPPORTED",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C2",
+        "claim": "cmd.exe execution occurred.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "SEC-0001",
+          "SEC-0002",
+          "PF-0001"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "claim": "The S2 execution marker was created.",
+        "status": "UNSUPPORTED",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C4",
+        "claim": "ransomware.exe was executed.",
+        "status": "UNSUPPORTED",
+        "evidence_ids": []
+      }
+    ]
+  },
+  {
+    "case_id": "S3",
+    "query": "Determine whether USB-mediated file activity occurred and reconstruct the relevant evidence.",
+    "plan": [
+      "usbstor_search",
+      "mounted_device_search",
+      "filesystem_search"
+    ],
+    "tool_calls": 3,
+    "retrieved_evidence_count": 7,
+    "latency_seconds": 3.575334,
+    "claims": [
+      {
+        "claim_id": "C1",
+        "claim": "A USB storage device was present.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "USBREG-0001",
+          "USBREG-0002",
+          "MOUNT-0001"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "claim": "ICA2026_USB_TEST.txt existed on the USB device.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "USBFILE-0001"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "claim": "The USB test file was transferred back to the host.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "LOCALFILE-0001",
+          "FILE-usb_returned.txt"
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "claim": "UnknownUSB_Malware.exe was executed.",
+        "status": "UNSUPPORTED",
+        "evidence_ids": []
+      }
+    ]
+  },
+  {
+    "case_id": "S4",
+    "query": "Determine whether startup persistence was configured and whether the referenced script executed.",
+    "plan": [
+      "registry_search",
+      "powershell_event_search"
+    ],
+    "tool_calls": 2,
+    "retrieved_evidence_count": 11,
+    "latency_seconds": 3.679894,
+    "claims": [
+      {
+        "claim_id": "C1",
+        "claim": "A startup persistence Run-key entry exists.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "RUN-0001"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "claim": "The Run-key entry references benign_startup.ps1.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "RUN-0001",
+          "PS4-0051",
+          "PS4-0005"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "claim": "The referenced startup script executed.",
+        "status": "SUPPORTED",
+        "evidence_ids": [
+          "PS4-0051",
+          "PS4-0005",
+          "PS4-0007"
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "claim": "malicious_persist.exe was configured for persistence.",
+        "status": "UNSUPPORTED",
+        "evidence_ids": []
+      }
+    ]
+  }
+]

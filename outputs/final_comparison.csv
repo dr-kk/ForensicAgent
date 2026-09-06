@@ -1,0 +1,5 @@
+Method,TrueSupported,FalseRejected,TSR_percent,EGR_percent,UCR_percent,AvgToolCalls,AvgRetrievalCalls,AvgLatency_s
+LLM-only,0/12,4/4,0.0,0,0.0,0.0,0.0,5.914
+RAG-LLM,5/12,4/4,41.67,100.0,0.0,0.0,4.0,38.99
+Agent-NoVerify,10/12,4/4,83.33,100.0,0.0,2.0,0.0,3.71
+ForensicAgent,12/12,4/4,100.0,100.0,0.0,2.5,0.0,5.554

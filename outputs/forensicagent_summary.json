@@ -1,0 +1,11 @@
+{
+  "method": "ForensicAgent",
+  "num_scenarios": 4,
+  "true_claims": 12,
+  "false_claims": 4,
+  "supported_true": 12,
+  "supported_false": 0,
+  "TSR_percent": 100.0,
+  "EGR_percent": 100.0,
+  "UCR_percent": 0.0
+}

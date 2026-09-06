@@ -1,0 +1,3 @@
+Method,TrueClaimsSupported,FalseClaimsRejected,TSR_percent,EGR_percent,UCR_percent,AvgToolCalls,AvgLatency_s
+Agent-NoVerify,10/12,4/4,83.33,100.0,0.0,2.0,3.71
+ForensicAgent,12/12,4/4,100.0,100.0,0.0,2.5,5.554

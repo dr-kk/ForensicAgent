@@ -1,0 +1,5 @@
+Scenario,Name,TSR_percent,EGR_percent,UCR_percent,FalseClaimRejected
+S1,PowerShell Execution,100.0,100.0,0.0,1
+S2,Downloaded File Execution,100.0,100.0,0.0,1
+S3,USB File Activity,100.0,100.0,0.0,1
+S4,Startup Persistence,100.0,100.0,0.0,1

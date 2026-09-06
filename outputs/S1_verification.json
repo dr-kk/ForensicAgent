@@ -1,0 +1,40 @@
+[
+  {
+    "claim_id": "C1",
+    "claim": "PowerShell executed the controlled S1 forensic activity.",
+    "status": "SUPPORTED",
+    "evidence_ids": [
+      "PS-0010",
+      "PS-0019",
+      "PS-0021"
+    ],
+    "evidence_count": 3
+  },
+  {
+    "claim_id": "C2",
+    "claim": "The investigation executed Get-Process.",
+    "status": "SUPPORTED",
+    "evidence_ids": [
+      "PS-0017",
+      "PS-0021"
+    ],
+    "evidence_count": 2
+  },
+  {
+    "claim_id": "C3",
+    "claim": "The marker was written to evidence.txt.",
+    "status": "SUPPORTED",
+    "evidence_ids": [
+      "PS-0019",
+      "PS-0021"
+    ],
+    "evidence_count": 2
+  },
+  {
+    "claim_id": "C4",
+    "claim": "PowerShell executed Invoke-Mimikatz.",
+    "status": "UNSUPPORTED",
+    "evidence_ids": [],
+    "evidence_count": 0
+  }
+]
